@@ -20,15 +20,15 @@ Configures the behaviour of the F-keys on the Logitech K290
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/local/sbin/
-mkdir -p %{buildroot}/lib/udev/rules.d/
+mkdir -p %{buildroot}/usr/sbin/
+mkdir -p %{buildroot}/etc/udev/rules.d/
 
-install -m 755 k290_fnkeyctl %{buildroot}/usr/local/sbin/
-install -m 644 99-k290-config.rules %{buildroot}/lib/udev/rules.d/
+install -m 755 k290_fnkeyctl %{buildroot}/usr/sbin/
+install -m 644 99-k290-config.rules %{buildroot}/etc/udev/rules.d/
 
 %files
-/usr/local/sbin/k290_fnkeyctl
-/lib/udev/rules.d/99-k290-config.rules
+/usr/sbin/k290_fnkeyctl
+/etc/udev/rules.d/99-k290-config.rules
 
 %changelog
 * Thu Nov  5 2015 Mariusz Smykuła
